@@ -1,0 +1,22 @@
+{% extends "EzPublishCoreBundle::content_fields.html.twig" %}
+
+{% block ezform_field %}
+    {% set formValue = field.value.getForm() %}
+    {% if formValue %}
+        {% set form = formValue.createView() %}
+        {% set isMultiStep = field.value.isMultiStep() %}
+
+        {% apply spaceless %}
+            {% if not ez_is_field_empty(content, field) %}
+                {% if isMultiStep %}
+                    {{ form_start(form) }}
+                    {% set steps = multistep_form(form) %}
+                    {% include 'EzPlatformFormBuilderMultiStepFormsBundle::form_steps.html.twig' with {'form': form, 'steps': steps} %}
+                    {{ form_end(form) }}
+                {% else %}
+                    {{ form(form) }}
+                {% endif %}
+            {% endif %}
+        {% endapply %}
+    {% endif %}
+{% endblock %}

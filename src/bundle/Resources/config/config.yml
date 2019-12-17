@@ -1,0 +1,16 @@
+ez_platform_form_builder:
+    fields:
+        mb_step:
+            name: 'Step'
+            category: 'Basic form fields'
+            thumbnail: '/bundles/ezplatformadminui/img/ez-icons.svg#input-line'
+            attributes:
+                step_class:
+                    name: 'Step CSS class'
+                    type: 'string'
+                next_label:
+                    name: 'Next Step button label'
+                    type: 'string'
+                back_label:
+                    name: 'Previous Step button label'
+                    type: 'string'

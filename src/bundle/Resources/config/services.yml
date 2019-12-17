@@ -1,0 +1,25 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    MateuszBieniek\EzPlatformFormBuilderMultiStepForms\FormBuilder\Field\Mapper\StepMapper:
+        arguments:
+            $fieldIdentifier: 'mb_step'
+            $formType: 'MateuszBieniek\EzPlatformFormBuilderMultiStepForms\Form\Type\StepFieldType'
+        tags:
+            - { name: ezplatform.form_builder.field_mapper }
+
+    MateuszBieniek\EzPlatformFormBuilderMultiStepForms\Form\Type\StepFieldType:
+        tags:
+            - { name: form.type }
+
+    MateuszBieniek\EzPlatformFormBuilderMultiStepForms\FieldType\EzForm\Type:
+        decorates: EzSystems\EzPlatformFormBuilder\FieldType\Type
+        arguments: ['@MateuszBieniek\EzPlatformFormBuilderMultiStepForms\FieldType\EzForm\Type.inner']
+        public:    true
+
+    MateuszBieniek\EzPlatformFormBuilderMultiStepFormsBundle\Twig\MultiStepExtension:
+        tags:
+            - { name: twig.extension }
