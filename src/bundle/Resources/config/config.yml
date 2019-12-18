@@ -14,3 +14,6 @@ ez_platform_form_builder:
                 back_label:
                     name: 'Previous Step button label'
                     type: 'string'
+                custom_template:
+                    name: 'Custom twig template for step'
+                    type: 'string'

@@ -22,6 +22,7 @@ class StepMapper extends GenericFieldMapper
             'next_label' => $field->getAttributeValue('next_label'),
             'back_label' => $field->getAttributeValue('back_label'),
             'step_class' => $field->getAttributeValue('step_class'),
+            'custom_template' => $field->getAttributeValue('custom_template'),
             'class' => StepFieldType::STEP_FIELD_IDENTIFIER,
         ];
 

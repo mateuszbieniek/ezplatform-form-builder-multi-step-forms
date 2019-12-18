@@ -28,10 +28,14 @@ class MultiStepExtension extends AbstractExtension
             if ($field->vars['block_prefixes'][1] == StepFieldType::STEP_FIELD_IDENTIFIER) {
                 $currentStep++;
                 $steps[$currentStep]['step_field'] = $field;
+                $steps[$currentStep]['fields'] = [];
             } else {
-                $steps[$currentStep]['fields'][] = $field;
+                if ($currentStep !== 0) {
+                    $steps[$currentStep]['fields'][] = $field;
+                }
             }
         }
+
         return $steps;
     }
 }

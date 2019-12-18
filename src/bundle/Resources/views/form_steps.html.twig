@@ -3,16 +3,36 @@
     <div class="carousel-inner">
     {% for step in steps %}
         <div class="carousel-item{% if loop.first %} active{% endif %}{% if step.step_field.vars.attr["step_class"] is not empty %} {{ step.step_field.vars.attr["step_class"] }}{% endif %}">
-            {{ form_row(step.step_field) }}
-            {% for field in step.fields %}
-                {{ form_row(field) }}
-            {% endfor%}
+            {% if step.step_field.vars.attr["custom_template"] is not empty %}
+                {% include step.step_field.vars.attr["custom_template"] with { 'step': step } %}
+            {% else %}
+                {{ form_row(step.step_field) }}
+                {% for field in step.fields %}
+                    {{ form_row(field) }}
+                {% endfor%}
 
-            {% if step.step_field.vars.attr["back_label"] is not empty  %}
-                <button style="margin-right: 15px" data-target="#{{form.vars.name}}-carousel" type="button" class="btn btn-secondary back-step" role="button" data-slide="prev">{{ step.step_field.vars.attr["back_label"] }}</button>
-            {% endif %}
-            {% if step.step_field.vars.attr["next_label"] is not empty  %}
-                <button data-target="#{{form.vars.name}}-carousel" type="button" class="btn btn-primary next-step" role="button" data-slide="next">{{ step.step_field.vars.attr["next_label"] }}</button>
+                {% if step.step_field.vars.attr["back_label"] is not empty  %}
+                    <button
+                            data-target="#{{form.vars.name}}-carousel"
+                            type="button"
+                            class="btn btn-secondary back-step"
+                            role="button"
+                            data-slide="prev"
+                    >
+                        {{ step.step_field.vars.attr["back_label"] }}
+                    </button>
+                {% endif %}
+                {% if step.step_field.vars.attr["next_label"] is not empty  %}
+                    <button
+                            data-target="#{{form.vars.name}}-carousel"
+                            type="button"
+                            class="btn btn-primary next-step"
+                            role="button"
+                            data-slide="next"
+                    >
+                        {{ step.step_field.vars.attr["next_label"] }}
+                    </button>
+                {% endif %}
             {% endif %}
         </div>
     {% endfor %}
