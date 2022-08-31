@@ -78,9 +78,9 @@ class Type extends DecoratedType
     /**
      * {@inheritdoc}
      */
-    public function getName(ValueInterface $value)
+    public function getName(ValueInterface $value, FieldDefinition $fieldDefinition, string $languageCode): string
     {
-        $this->decoratedType->getName($value);
+        return $this->decoratedType->getName($value, $fieldDefinition, $languageCode);
     }
 
     /**

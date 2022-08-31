@@ -16,13 +16,12 @@
     }
   },
   "require": {
-    "php": ">=7.1",
-    "ezsystems/ezpublish-kernel": "^7.5",
-    "ezsystems/ezplatform-form-builder": "^1.2"
+    "php": ">=7.4",
+    "ibexa/form-builder": "4.1.5"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "2.7.*",
-    "phpunit/phpunit": "~7.0"
+    "phpunit/phpunit": "^9.5",
+    "symfony/phpunit-bridge": "^6.0"
   },
   "scripts": {
     "fix-cs": "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
