@@ -6,7 +6,7 @@ The bundle provides a "step" field for the Form Builder in eZ Platform EE which 
 ## Usage
 This bundle provides a default (and very basic) template that uses Bootstrap 4 to create a carousel which is used for 
 step transitions, but you can use any solution you prefer. To do so, you will have to override the default template 
-(`EzPlatformFormBuilderMultiStepFormsBundle::form_steps.html.twig`).
+(`@ezdesign/formbuilder_multistep/steps.html.twig`).
 
 If Step Field is not the very first field used in the Form, fields before first Step Field will be rendered below the 
 carousel (in the default template). If there is no Step Field inside Form it will be rendered normally.

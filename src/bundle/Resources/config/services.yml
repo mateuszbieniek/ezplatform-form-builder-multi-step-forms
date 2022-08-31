@@ -4,6 +4,9 @@ services:
         autoconfigure: true
         public: false
 
+    MateuszBieniek\EzPlatformFormBuilderMultiStepFormsBundle\Twig\:
+        resource: '../../Twig'
+
     MateuszBieniek\EzPlatformFormBuilderMultiStepForms\FormBuilder\Field\Mapper\StepMapper:
         arguments:
             $fieldIdentifier: 'mb_step'
@@ -19,7 +22,3 @@ services:
         decorates: EzSystems\EzPlatformFormBuilder\FieldType\Type
         arguments: ['@MateuszBieniek\EzPlatformFormBuilderMultiStepForms\FieldType\EzForm\Type.inner']
         public:    true
-
-    MateuszBieniek\EzPlatformFormBuilderMultiStepFormsBundle\Twig\MultiStepExtension:
-        tags:
-            - { name: twig.extension }

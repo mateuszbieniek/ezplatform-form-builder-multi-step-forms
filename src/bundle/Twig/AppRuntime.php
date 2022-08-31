@@ -1,24 +1,14 @@
 <?php
 
-declare(strict_types=1);
-
 namespace MateuszBieniek\EzPlatformFormBuilderMultiStepFormsBundle\Twig;
 
 use MateuszBieniek\EzPlatformFormBuilderMultiStepForms\Form\Type\StepFieldType;
 use Symfony\Component\Form\FormView;
-use Twig\Extension\AbstractExtension;
-use Twig\TwigFunction;
+use Twig\Extension\RuntimeExtensionInterface;
 
-class MultiStepExtension extends AbstractExtension
+class AppRuntime implements RuntimeExtensionInterface
 {
-    public function getFunctions()
-    {
-        return [
-            new TwigFunction('multistep_form', [$this, 'prepareMultistepForm']),
-        ];
-    }
-
-    public function prepareMultistepForm(FormView $form)
+    public function prepareMultistepForm(FormView $form): array
     {
         $steps = [];
         $currentStep = 0;
