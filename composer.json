@@ -17,7 +17,7 @@
   },
   "require": {
     "php": ">=7.4",
-    "ezsystems/ezplatform-form-builder": "^2.3"
+    "ibexa/form-builder": "4.1.5"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",
