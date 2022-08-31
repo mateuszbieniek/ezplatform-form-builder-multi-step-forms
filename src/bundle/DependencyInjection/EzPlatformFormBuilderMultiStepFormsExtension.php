@@ -34,7 +34,7 @@ class EzPlatformFormBuilderMultiStepFormsExtension extends Extension implements 
     }
 
     /**
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
+     * @param ContainerBuilder $container
      */
     private function prependFieldType(ContainerBuilder $container): void
     {
@@ -48,7 +48,7 @@ class EzPlatformFormBuilderMultiStepFormsExtension extends Extension implements 
     }
 
     /**
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
+     * @param ContainerBuilder $container
      */
     private function prependTemplates(ContainerBuilder $container): void
     {
