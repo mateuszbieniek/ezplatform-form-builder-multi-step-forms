@@ -56,6 +56,6 @@ class EzPlatformFormBuilderMultiStepFormsExtension extends Extension implements 
             __DIR__ . '/../Resources/config/ez_field_templates.yml'
         );
 
-        $container->prependExtensionConfig('ezpublish', $config);
+        $container->prependExtensionConfig('ezplatform', $config);
     }
 }
